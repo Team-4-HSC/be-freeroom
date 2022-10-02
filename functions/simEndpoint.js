@@ -26,7 +26,7 @@ const login = async (npm, password) => {
   const $ = cheerio.load(hitLogin);
   const name = $('.user-profile a span').text();
   const typeOfUser = $('.nav-right li .label-danger').text();
-  if (name == '') {
+  if (name === '') {
     return null
   } else {
     return {
