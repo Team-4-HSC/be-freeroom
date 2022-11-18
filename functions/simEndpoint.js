@@ -29,8 +29,27 @@ const login = async (npm, password) => {
   if (name === '') {
     return null
   } else {
-    const faculty = npm.split('')[2] + npm.split('')[3];
-    const major = npm.split('')[4] + npm.split('')[5];
+    let faculty;
+    let major;
+    const facultyCode = npm.split('')[2] + npm.split('')[3];
+    const majorCode = npm.split('')[4] + npm.split('')[5];
+    switch (facultyCode) {
+      case '04':
+        faculty = 'Fakultas Teknik'
+        break;
+      default:
+        faculty = 'Fakultas ...'
+        break;
+    }
+
+    switch (majorCode) {
+      case '11':
+        major = 'Teknik Komputer'
+        break;
+      default:
+        major = 'Teknik ...'
+        break;
+    }
     return {
       name,
       typeOfUser,
