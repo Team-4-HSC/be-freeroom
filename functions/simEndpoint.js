@@ -29,9 +29,13 @@ const login = async (npm, password) => {
   if (name === '') {
     return null
   } else {
+    const faculty = npm.split('')[2] + npm.split('')[3];
+    const major = npm.split('')[4] + npm.split('')[5];
     return {
       name,
       typeOfUser,
+      faculty,
+      major,
     };
   }
 }
