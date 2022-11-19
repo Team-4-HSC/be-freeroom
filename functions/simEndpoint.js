@@ -1,5 +1,11 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const https = require('https');
+
+const httpsAgent = new https.Agent({
+    rejectUnauthorized: false,
+});
+axios.defaults.httpsAgent = httpsAgent
 
 const login = async (npm, password) => {
   const url = "https://simkuliah.unsyiah.ac.id/index.php";
